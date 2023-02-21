@@ -9,29 +9,33 @@
 
 
 class Solution:
-    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
-        # create a new linked list
-        # create a carry variable
-        # create a sum variable
-        # create a while loop that runs while l1 or l2 is not None
-        # create a sum variable that adds the values of l1 and l2
-        # create a carry variable that adds the values of l1 and l2
-        # if the sum is greater than 10, then set the carry to 1 and the sum to the remainder
-        # if the sum is less than 10, then set the carry to 0 and the sum to the sum
-        # create a new node with the sum value
-        # set the next value of the new node to the next value of l1 and l2
-        # return the new node
-        new = ListNode()
+    def addTwoNumbers(
+        self, l1: Optional[ListNode], l2: Optional[ListNode]
+    ) -> Optional[ListNode]:
+        # Create a new list node to store the sum
+        sum = ListNode(0)
+        # Create a pointer to the sum list node
+        p = sum
+        # Create a carry variable to store the carry value
         carry = 0
-        sum = 0
+        # Loop through the list nodes until both l1 and l2 are None
         while l1 or l2:
-            sum = l1.val + l2.val + carry
-            if sum > 10:
-                carry = 1
-                sum = sum % 10
-            else:
-                carry = 0
-            new = ListNode(sum)
-            new.next = l1.next
-            new.next = l2.next
-        return new
+            # If l1 is not None, add the value to the sum
+            if l1:
+                carry += l1.val
+                l1 = l1.next
+            # If l2 is not None, add the value to the sum
+            if l2:
+                carry += l2.val
+                l2 = l2.next
+            # Create a new list node with the carry value
+            p.next = ListNode(carry % 10)
+            # Move the pointer to the next list node
+            p = p.next
+            # Update the carry value
+            carry //= 10
+        # If the carry value is not 0, add a new list node with the carry value
+        if carry:
+            p.next = ListNode(carry)
+        # Return the sum list node
+        return sum.next
