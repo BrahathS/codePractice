@@ -12,6 +12,3 @@ The code in this repository is written in a variety of programming languages, in
 
 ## Contributions
 I welcome any feedback, suggestions, or contributions to this repository. If you notice any errors in my code or have any ideas for improving the solutions, please feel free to open an issue or submit a pull request.
-
-### License
-This repository is licensed under the MIT License. Please refer to the LICENSE file for more information.
