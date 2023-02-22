@@ -17,21 +17,17 @@
 # For each test case, print the number of special subarrays of A.
 
 # Sample Input 0
-
 # 2
 # 3
 # 1 2 3
 # 4
-
 # 1 2 3 4
 
 # Sample Output 0
-
 # 2
 # 4
 
 # Explanation 0
-
 # For the first test case, the special subarrays are [1], [2], [3], [1, 2], [2, 3], [1, 2, 3]. There are 6 such subarrays, but only 2 are distinct.
 
 # Write your code here
@@ -59,3 +55,6 @@ if __name__ == "__main__":
         a = list(map(int, input().rstrip().split()))
         result = specialSubarray(a)
         fptr.write(str(result) + "")
+# output
+# 5
+# 2
